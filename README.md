@@ -20,6 +20,21 @@ Entre na pasta backend e instale as dependências com os seguintes comandos :
 
 #### Execute
 
+Crie um ambiente virtual
+```sh
+
+    python -m venv .venv 
+
+```
+
+Ative o ambiente virtual
+```sh
+
+    .venv\Scripts\activate
+
+```
+
+Instale as dependências
 ```sh
     pip install -r requirements.txt
 
