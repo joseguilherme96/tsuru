@@ -87,8 +87,10 @@ const longitude = ref()
 const localizacao = ref()
 
 const passarosAtivos = ref([]);
+const webSocketURL = import.meta.env.VITE_WEBSOCKET_URL;
 
-const socket = io('http://127.0.0.1:5000');
+
+const socket = io(`${webSocketURL}`);
 
 socket.on('connect', function (e) {
 });
@@ -109,6 +111,12 @@ socket.on('response event connect', (e) => {
 socket.on('response event disconnected', (e) => {
 
     passarosAtivos.value = e;
+
+})
+
+socket.on('connect_error', (error) => {
+
+    console.log("Falha ao conectar com websocket")
 
 })
 
